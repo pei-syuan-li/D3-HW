@@ -1,4 +1,4 @@
-# D3.js 互動式資料視覺化-入門班
+# D3.js 互動式資料視覺化
 * 第一堂：D3開發環境架設與網頁前端概覽
 * 第二堂：網頁前端HTML, CSS, JavaScript 入門
 * 第三堂：網頁前端HTML, CSS, JavaScript 基礎
@@ -12,44 +12,33 @@
 * 第十一堂：資料視覺化實戰專題Part1
 * 第十二堂：資料視覺化實戰專題Part2
 
+# Homeworks
 ## Homework 1
 [GitPage](https://pei-syuan-li.github.io/D3-HW/HW1/) 
-### Practice 1
-關關雎鳩 
-### Practice 2
-小王子
+### Practice 1--關關雎鳩 
+### Practice 2--小王子
 
 ## Homework 2
 [GitPage](https://pei-syuan-li.github.io/D3-HW/HW2/) 
-### Practice 1
-瑪麗水管
-### Practice 2
-N~M之間的亂數整數
-### Practice 3
-一個亂數函式
+### Practice 1--瑪麗水管
+### Practice 2--N~M之間的亂數整數
+### Practice 3--一個亂數函式
 
 ## Homework 3
 [GitPage](https://pei-syuan-li.github.io/D3-HW/HW3/) 
-### Practice 1
-五線譜 
-### Practice 2
-亂數長條圖
+### Practice 1--五線譜 
+### Practice 2--亂數長條圖
 
 ## Homework 4
 [GitPage](https://pei-syuan-li.github.io/D3-HW/HW4/) 
-### Practice 1
-製作長條圖
-### Practice 2
-把數字小於70改紅色
-### Practice 3
-建立簡單動態圖表
+### Practice 1--製作長條圖
+### Practice 2--把數字小於70改紅色
+### Practice 3--建立簡單動態圖表
 
 ## Homework 5-1
 [GitPage](https://pei-syuan-li.github.io/D3-HW/HW5-1/) 
-### Practice
-2D散佈圖
+### Practice--2D散佈圖
 
 ## Homework 5-2
 [GitPage](https://pei-syuan-li.github.io/D3-HW/HW5-2/) 
-### Practice
-Taiwan Map&縣市資訊
+### Practice--Taiwan Map&縣市資訊
