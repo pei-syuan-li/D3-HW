@@ -1,37 +1,55 @@
-## Welcome to GitHub Pages
+# D3.js 互動式資料視覺化-入門班
+* 第一堂：D3開發環境架設與網頁前端概覽
+* 第二堂：網頁前端HTML, CSS, JavaScript 入門
+* 第三堂：網頁前端HTML, CSS, JavaScript 基礎
+* 第四堂：D3基本介紹與資料視覺化概覽
+* 第五堂：向量圖SVG概述與基礎
+* 第六堂：D3入門(資料)
+* 第七堂：D3基礎 Part1(繪圖)
+* 第八堂：D3基礎 Part2(繪圖)
+* 第九堂：D3進階 Part1(互動)
+* 第十堂：D3進階 Part2(互動)
+* 第十一堂：資料視覺化實戰專題Part1
+* 第十二堂：資料視覺化實戰專題Part2
 
-You can use the [editor on GitHub](https://github.com/pei-syuan-li/D3-HW/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Homework 1
+[GitPage](https://pei-syuan-li.github.io/D3-HW/HW1/) 
+### Practice 1
+關關雎鳩 
+### Practice 2
+小王子
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Homework 2
+[GitPage](https://pei-syuan-li.github.io/D3-HW/HW2/) 
+### Practice 1
+瑪麗水管
+### Practice 2
+N~M之間的亂數整數
+### Practice 3
+一個亂數函式
 
-### Markdown
+## Homework 3
+[GitPage](https://pei-syuan-li.github.io/D3-HW/HW3/) 
+### Practice 1
+五線譜 
+### Practice 2
+亂數長條圖
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Homework 4
+[GitPage](https://pei-syuan-li.github.io/D3-HW/HW4/) 
+### Practice 1
+製作長條圖
+### Practice 2
+把數字小於70改紅色
+### Practice 3
+建立簡單動態圖表
 
-```markdown
-Syntax highlighted code block
+## Homework 5-1
+[GitPage](https://pei-syuan-li.github.io/D3-HW/HW5-1/) 
+### Practice
+2D散佈圖
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/pei-syuan-li/D3-HW/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Homework 5-2
+[GitPage](https://pei-syuan-li.github.io/D3-HW/HW5-2/) 
+### Practice
+Taiwan Map&縣市資訊
