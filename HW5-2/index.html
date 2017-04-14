@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>D3.js HW05-2_Pei-Syuan Li</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v3.js"></script>
+    <script src="topojson.min.js"></script>
+    <style>
+        .map-boundary {
+            stroke: #eee;
+        }
+        
+        #tooltip {
+            position: absolute;
+            left: 20px;
+            top: 100px;
+            background: rgba(255, 239, 0, 0.84);
+            /*  #fff; */
+            width: 100px;
+            height: auto;
+            padding: 0px 10px;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        #tooltip.hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class='title'><b>D3.js HW05-2<br>
+    Name: Pei-Syuan Li<br>
+    Date: 2016/11/6 </b></div>
+
+    <h2 class='prac'> Practce--Taiwan Map&縣市資訊</h2>
+
+    <div id="tooltip" class="hidden">
+        <p><strong id="city">City</strong></p>
+        <p id="popu">population</p>
+    </div>
+
+    <svg width="900" height="600"></svg>
+    <script>
+        var tempColor;
+
+        //1.地理資料檔: topoTaiwan.json
+        d3.json("topoTaiwan.json", function (topoData) {
+
+            bind(topoData);
+            render();
+
+        });
+
+
+        //        d3.json("population.json", function (popuData) {
+        //            render();
+        //        })
+
+        function render() {
+            //從這裡開始修改
+            var fScale = d3.scale.category20c();
+            d3.selectAll("path")
+                .attr({
+                    fill: function (d, i) {
+                        return fScale(i);
+                        //fill: "green"
+                    }
+                })
+                .on("mouseover", function (d) {
+                    tempColor = d3.select(this).attr('fill');
+                    d3.select(this).attr({
+                        fill: "rgba(245, 255, 1, 0.33)"
+                    })
+                })
+                .on("mouseout", function (d) {
+                    d3.select(this).attr({
+                        fill: tempColor //"green"
+                    })
+                    d3.select("#tooltip").classed("hidden", true);
+
+                })
+
+            .on("click", function (d) {
+
+                var coordinates = d3.mouse(this);
+                var xPos = coordinates[0] + 10;
+                var yPos = coordinates[1] + 10;
+                var tooltip = d3.select("#tooltip").style({
+                    left: xPos + "px",
+                    top: yPos + "px"
+                });
+                d3.select("#city").text(d.properties.C_Name);
+                var tempc = d.properties.C_Name;
+                var pop;
+                d3.json("population.json", function (popuData) {
+                    var Arr = popuData.map(function (a) {
+                        return a.COUNTYNAME;
+
+                    });
+                    for (var i = 0; i < Arr.length; i++) {
+                        if (Arr[i] === tempc) {
+                            pop = popuData[i].population; //Arr[i] 
+                            //console.log(pop);
+                            d3.select("#popu").text('人口: ' + pop);
+                        }
+                    }
+
+                });
+                //                var Arr2 = topoData.map(function (d) {
+                //                    return d.properties.C_Name;
+                //                });
+                //                var aa = Arr2.indexOf(d.properties.C_Name);
+                //                console.log(aa);
+                //console.log(popu(d.properties.C_Name));
+
+                d3.select("#tooltip").classed("hidden", false);
+                //console.log(d.properties.C_Name);
+            });
+
+
+        }
+
+
+        //        function popu(cy) {
+        //            d3.json("population.json", function (popuData) {
+        //                var Arr = popuData.map(function (d) {
+        //                    return d.COUNTYNAME;
+        //                });
+        //                var aa = Arr.indexOf(cy);
+        //                return popuData[aa].population;
+        //
+        //                //                for (var i = 0; i < Arr.length; i++) {
+        //                //                    if (Arr[i] === cy) {
+        //                //                        return Arr[i]; //popuData[i].population; 
+        //                //                    }
+        //                //                }
+        //            })
+        //
+        //        };
+        //        //
+
+        function bind(topoData) {
+            // 2.地理投影器: 設定投影方式(麥卡托)、定位點([經,緯度])、縮放(scale)
+            var projection = d3.geo.mercator().center([121, 24]).scale(6000);
+
+            // 3.路徑產生器: d3.geo.path()
+            var path = d3.geo.path().projection(projection);
+
+            // 4.地理資料檔: 使用topojson.js載入地理資料
+            var topo = topojson.feature(topoData, topoData.objects["county"]);
+
+            // 綁定path與載入的地理資料(features:每一地理區劃)
+            var selection = d3.select("svg").selectAll("path").data(topo.features);
+        console.log(topo.features);   
+            selection.enter().append("path");
+            selection.exit().remove();
+            selection.classed("map-boundary", true).attr("d", path);
+        }
+    </script>
+
+</body>
+
+</html>

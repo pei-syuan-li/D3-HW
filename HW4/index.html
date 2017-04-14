@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+
+<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>web html</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://d3js.org/d3.v3.js"></script>
+    </head>
+    <div class='title'><b>D3.js HW04<br>
+    Name: Pei-Syuan Li<br>
+    Date: 2016/10/30 </b></div>
+
+    <h2 class='prac'> Practce 1--製作長條圖 (2016年年8月&&台北市&&發票
+金金額>10億元的項目) </h2>
+
+    <svg width="400" height="200"></svg>
+
+    <script>
+        d3.json("invoice-taipei.json", function (dataSet) {
+            var svg = d3.select("svg");
+            var count = 0;
+            for (var i = 0; i < dataSet.length; i++) {
+                if (dataSet[i].date === '2016/8/1' && dataSet[i].cid === 'A' && parseInt(dataSet[i].amount) > 1000000000) {
+                    d3.select("svg")
+                        .append("rect")
+                        .attr({
+                            x: 150,
+                            y: 10 + 12 * count,
+                            width: parseInt(dataSet[i].amount) / 100000000,
+                            height: 10,
+                            fill: "red"
+                        });
+                    d3.select("svg")
+                        .append("text")
+                        .attr({
+                            x: 0,
+                            y: 16 + 12 * count,
+                            "font-size": 8
+                        }).text(dataSet[i].industry);
+                    count = count + 1;
+                }
+
+            }
+        });
+    </script>
+
+
+    <h2 class='prac'> Practce 2--把數字小於70改紅色</h2>
+    <div id="p2"></div>
+
+    <script>
+        var arr = [85, 60, 99, 49, 77, 82];
+
+        bind(arr);
+        render();
+        //資料綁定!!
+        function bind(data) {
+            var selection = d3.select("body")
+                .selectAll("#p2")
+                .data(data);
+            selection.enter().append('div').attr({
+                id: "p2"
+            }); //補足視覺元素 
+            selection.exit().remove();
+        }
+        //會修改!
+        function render() {
+            d3.selectAll('div#p2').text(function (d, i) {
+                return i + 1 + ':' + d; //return '---' + d;
+            });
+            d3.selectAll('div#p2').style({
+                color: function (d) { //放function
+                    if (d < 70) {
+                        return 'red';
+                    } else {
+                        return 'black';
+                    }
+                }
+            });
+        }
+        console.log(d3.selectAll('div'))
+    </script>
+
+
+    <h2 class='prac'> Practce 3--建立簡單動態圖表</h2>
+
+    <input type="button" value="Add" onclick="update()">
+    <input type="button" value="Reset" onclick="reset()">
+
+    <script>
+        var h = 200;
+        var w = 900;
+        var p = 50;
+
+        var arr = [79, 56, 33, 99, 68, 49];
+        svg(w, h, p);
+        bind(arr);
+        render(w, h, p);
+        bind2(arr); //文字
+        render2(w, h, p); //文字
+
+        function svg(w, h, p) {
+            d3.select('body').append('svg').attr({
+                id: "svg2",
+                width: w,
+                height: h
+            })
+
+        }
+        //更新後重綁資了!
+        function update() {
+            var num = random(20, 100);
+            arr.push(num);
+            bind(arr);
+            render(w, h, p);
+            bind2(arr); //文字
+            render2(w, h, p); //文字
+        }
+
+        function reset() {
+            arr = [79, 56, 33, 99, 68, 49];
+
+            bind(arr);
+            render(w, h, p);
+            bind2(arr); //文字
+            render2(w, h, p); //文字
+        }
+
+
+        function random(n, m) {
+            return Math.ceil(Math.random() * (m - n) + n)
+
+        }
+
+        function bind(data) {
+            var selection = d3.select("#svg2")
+                .selectAll("rect")
+                .data(data);
+            selection.enter().append('rect'); //補足視覺元素 
+            selection.exit().remove();
+        }
+        //前面已將資料綁定, 可以直接使用d
+        function render(w, h, p) {
+            d3.select("#svg2").selectAll('rect').attr({
+                x: function (d, i) {
+                    return p + 45 * i;
+                },
+                y: function (d) {
+                    return h - p - d;
+                },
+                width: 40,
+                height: function (d) {
+                    return d;
+                },
+                fill: function (d) {
+                    if (d < 70) {
+                        return 'red';
+                    } else {
+                        return 'lightgreen';
+                    }
+                }
+            })
+        }
+        //綁定文字, 用svg!!
+
+
+        function bind2(data) {
+            var selection = d3.select("#svg2").selectAll("text").data(data);
+            selection.enter().append('text'); //補足視覺元素 
+            selection.exit().remove();
+        }
+        //前面已將資料綁定, 可以直接使用d
+        function render2(w, h, p) {
+            d3.select("#svg2").selectAll('text').attr({
+                x: function (d, i) {
+                    return p + 45 * i + 12;
+                },
+                y: function (d) {
+                    return h - p + 15;
+                },
+                fill: 'black'
+            }).text(function (d) {
+                return d;
+            })
+        }
+    </script>
+
+
+</body>
+
+
+</html>

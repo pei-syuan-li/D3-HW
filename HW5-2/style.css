@@ -1,0 +1,17 @@
+body {
+    /*    background: rgba(0, 246, 255, 0.23);*/
+}
+
+h2 {
+    color: rgba(0, 0, 0, 1);
+    /*    background: rgba(0, 246, 255, 0.23);*/
+    /* width: 100px; */
+}
+
+.title {
+    background: rgba(206, 255, 0, 0.71);
+    text-align: center;
+    font-style: italic;
+    font-family: Georgia;
+    font-size: 30px;
+}

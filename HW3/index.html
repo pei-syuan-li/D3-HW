@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>web html</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://d3js.org/d3.v3.js"></script>
+    </head>
+    <div class='title'><b>D3.js HW03<br>
+    Name: Pei-Syuan Li<br>
+    Date: 2016/10/23 </b></div>
+
+    <h2 class='prac'> Practce 1--五線譜 </h2>
+
+    <svg id='stave' width="300" height="200"> </svg>
+
+    <h2 class='prac'> Practce 2--亂數長條圖 </h2>
+
+    <svg id='hist' width="400" height="300"> </svg>
+
+    <script>
+        d3.select('#stave').append('circle').attr('cx', 150).attr('cy', 120).attr('r', 15);
+
+        d3.select('#stave').append('rect').attr({
+            x: 160,
+            y: 45,
+            width: 5,
+            height: 78
+        });
+
+        for (var i = 0; i < 5; i++) {
+            d3.select('#stave').append('line').attr({
+                x1: 0,
+                y1: 45 + 30 * i,
+                x2: 300,
+                y2: 45 + 30 * i,
+                stroke: 'black',
+                'stroke-width': 1
+            });
+        }
+        d3.select('#stave').append('text').attr({
+            x: 140,
+            y: 200,
+            'font-size': 30,
+            'font-family': 'arial'
+        }).text('A');
+
+        function random(n, m) {
+            return Math.ceil(Math.random() * (m - n) + n);
+        }
+
+        for (var i = 0; i < 20; i++) {
+            var num = random(20, 300);
+            d3.select('#hist').append('rect').attr({
+                x: 10,
+                y: 10 + 12 * i,
+                width: num,
+                height: 10,
+                fill: 'red'
+            });
+            d3.select('#hist').append('text').attr({
+                x: num + 15,
+                y: 20 + 12 * i,
+                'font-size': 12
+            }).text(num)  
+        }
+    </script>
+
+
+</body>
+
+
+
+</html>

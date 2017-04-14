@@ -1,0 +1,41 @@
+body {
+    /*    background: rgba(0, 246, 255, 0.23);*/
+}
+
+h2 {
+    color: rgba(0, 0, 0, 1);
+    /*    background: rgba(0, 246, 255, 0.23);*/
+    /* width: 100px; */
+}
+
+.title {
+    background: rgba(0, 168, 255, 0.46);
+    text-align: center;
+    font-style: italic;
+    font-family: monospace;
+    /*   Georgia */
+    font-size: 30px;
+}
+
+.top_box {
+    background: lightgreen;
+    width: 200px;
+    height: 50px;
+    border: 6px solid green;
+    border-top-style: double;
+    border-bottom-style: dotted;
+}
+
+.bottom_box {
+    background: lightgreen;
+    width: 150px;
+    height: 200px;
+    margin-left: 25px;
+    border: 6px solid green;
+    border-top-style: none;
+}
+
+.pic {
+    margin-left: 45px;
+    margin-bottom: -2px;
+}
