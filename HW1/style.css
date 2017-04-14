@@ -1,0 +1,32 @@
+body {
+    background: rgba(226, 255, 0, 0.21);
+}
+
+
+/* 呼叫div且align=center的標籤們=>  div[align='center']{*** } */
+
+p,
+div {
+    /*    background: rgb(163, 124, 124);*/
+}
+
+h2 {
+    color: rgba(0, 0, 0, 1);
+    background: rgba(255, 196, 0, 0.56);
+}
+
+blockquote {
+    color: rgb(0, 0, 0);
+    background: rgba(226, 255, 0, 0.42);
+}
+
+
+/* 顏色以後面的為準 (藍色)!! */
+
+strong {
+    color: #f00;
+    color: #00f;
+}
+
+
+/* p { color: navy } */
