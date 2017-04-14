@@ -1,4 +1,4 @@
-## Homework 3
+## HW3
 [GitPage](https://pei-syuan-li.github.io/D3-HW/HW3/) 
 ### Practice 1
 五線譜 
