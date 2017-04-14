@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>D3.js HW05-2_Pei-Syuan Li</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="Shortcut Icon" type="image/x-icon" href="http://666kb.com/i/did4gmg26anzq1una.ico" />
+    <script src="https://d3js.org/d3.v3.js"></script>
     <script src="https://d3js.org/d3.v3.js"></script>
     <script src="topojson.min.js"></script>
     <style>
@@ -156,7 +158,7 @@
 
             // 綁定path與載入的地理資料(features:每一地理區劃)
             var selection = d3.select("svg").selectAll("path").data(topo.features);
-        console.log(topo.features);   
+            console.log(topo.features);
             selection.enter().append("path");
             selection.exit().remove();
             selection.classed("map-boundary", true).attr("d", path);
