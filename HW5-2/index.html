@@ -57,13 +57,7 @@
 
         });
 
-
-        //        d3.json("population.json", function (popuData) {
-        //            render();
-        //        })
-
         function render() {
-            //從這裡開始修改
             var fScale = d3.scale.category20c();
             d3.selectAll("path")
                 .attr({
@@ -112,38 +106,12 @@
                     }
 
                 });
-                //                var Arr2 = topoData.map(function (d) {
-                //                    return d.properties.C_Name;
-                //                });
-                //                var aa = Arr2.indexOf(d.properties.C_Name);
-                //                console.log(aa);
-                //console.log(popu(d.properties.C_Name));
-
                 d3.select("#tooltip").classed("hidden", false);
                 //console.log(d.properties.C_Name);
             });
 
 
         }
-
-
-        //        function popu(cy) {
-        //            d3.json("population.json", function (popuData) {
-        //                var Arr = popuData.map(function (d) {
-        //                    return d.COUNTYNAME;
-        //                });
-        //                var aa = Arr.indexOf(cy);
-        //                return popuData[aa].population;
-        //
-        //                //                for (var i = 0; i < Arr.length; i++) {
-        //                //                    if (Arr[i] === cy) {
-        //                //                        return Arr[i]; //popuData[i].population; 
-        //                //                    }
-        //                //                }
-        //            })
-        //
-        //        };
-        //        //
 
         function bind(topoData) {
             // 2.地理投影器: 設定投影方式(麥卡托)、定位點([經,緯度])、縮放(scale)
