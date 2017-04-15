@@ -11,11 +11,13 @@
 * 第十堂：D3進階 Part2(互動)
 * 第十一堂：資料視覺化實戰專題Part1
 * 第十二堂：資料視覺化實戰專題Part2
----
+
 # Homework
 ## HW1
-[GitPage](https://pei-syuan-li.github.io/D3-HW/HW1/) </br> 
-Practice 1--關關雎鳩 </br> 
+[GitPage](https://pei-syuan-li.github.io/D3-HW/HW1/) 
+
+Practice 1--關關雎鳩 
+
 Practice 2--小王子
 
 ## HW2
