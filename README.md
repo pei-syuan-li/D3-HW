@@ -19,10 +19,9 @@ Practice 1--關關雎鳩
 Practice 2--小王子
 
 ## HW2
-[GitPage](https://pei-syuan-li.github.io/D3-HW/HW2/) 
-
-Practice 1--瑪麗水管 </br> 
-Practice 2--N~M之間的亂數整數 </br> 
+[GitPage](https://pei-syuan-li.github.io/D3-HW/HW2/) <br> 
+Practice 1--瑪麗水管 <br> 
+Practice 2--N~M之間的亂數整數 <br> 
 Practice 3--一個亂數函式
 
 ## HW3
